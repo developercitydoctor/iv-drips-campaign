@@ -1,6 +1,5 @@
 import Thankyou from "../Components/ThankYouPage/Thankyou";
 import HomePage from "../Pages/HomePage";
-import DripDetailPage from "../Pages/DripDetailPage";
 
 const routes = [
   {
@@ -11,11 +10,6 @@ const routes = [
   {
     path: "/thank-you",
     element: <Thankyou/>,
-    isProtected: false,
-  },
-  {
-    path: "/drip/:id",
-    element: <DripDetailPage/>,
     isProtected: false,
   },
 ];

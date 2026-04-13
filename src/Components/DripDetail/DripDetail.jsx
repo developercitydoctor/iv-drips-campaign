@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import { drips } from "../../Datasets/dripsDataset";
 import { IoMdCall } from "react-icons/io";
 import "./DripDetail.scss";
@@ -11,14 +10,15 @@ import icon3 from "../../assets/Icons/icon-11.png";
 import arrow from "../../assets/Icons/icon-12.png";
 
 
-const DripDetail = () => {
-  const { id } = useParams();
+const DripDetail = ({ dripId, variant = "page" }) => {
   const [activeTab, setActiveTab] = useState("nutrients");
-  const drip = drips.find((d) => d.id === parseInt(id));
+  const drip = drips.find((d) => d.id === Number(dripId));
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [id]);
+    if (variant === "page") {
+      window.scrollTo(0, 0);
+    }
+  }, [dripId, variant]);
 
   if (!drip) {
     return <div>Drip not found</div>;
@@ -67,7 +67,9 @@ const DripDetail = () => {
   const description = `${drip.name} delivers a top-tier reset for deep fatigue, burnout, and brain fog using our most premium NAD+ formulation.`;
 
   return (
-    <div className="drip-detail-page">
+    <div
+      className={`drip-detail-page${variant === "modal" ? " drip-detail-page--modal" : ""}`}
+    >
       <div className="drip-detail-container">
         <div className="drip-detail-content">
           {/* Left Section - Product Image */}

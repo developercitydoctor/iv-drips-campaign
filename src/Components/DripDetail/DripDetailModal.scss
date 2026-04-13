@@ -1,0 +1,41 @@
+.drip-detail-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10020;
+  background: #0c0d0d;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 56px 16px 32px;
+  box-sizing: border-box;
+}
+
+.drip-detail-modal-close {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  z-index: 10021;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(223, 236, 244, 0.25);
+  border-radius: 50%;
+  background: rgba(223, 236, 244, 0.1);
+  color: #dfecf4;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+
+  &:hover {
+    background: rgba(223, 236, 244, 0.18);
+    border-color: rgba(223, 236, 244, 0.4);
+    color: #ffffff;
+  }
+}
+
+.drip-detail-modal-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}

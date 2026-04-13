@@ -728,3 +728,14 @@
   }
 }
 
+.drip-detail-page.drip-detail-page--modal {
+  margin-top: 0;
+  min-height: 0;
+  background: transparent;
+  padding: 0;
+
+  .drip-detail-container {
+    padding: 0;
+  }
+}
+

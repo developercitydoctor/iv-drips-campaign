@@ -1,12 +1,12 @@
 import "./ServicesSection.scss";
 import { drips } from "../../../Datasets/dripsDataset";
-import { useNavigate } from "react-router-dom";
+import { useDripDetailModal } from "../../../Context/DripDetailModalContext";
 
 const ServicesSection = () => {
-  const navigate = useNavigate();
+  const { openDripDetail } = useDripDetailModal();
 
   const handleDripClick = (dripId) => {
-    navigate(`/drip/${dripId}`);
+    openDripDetail(dripId);
   };
 
   return (

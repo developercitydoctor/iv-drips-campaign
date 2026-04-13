@@ -4,12 +4,15 @@ import { BrowserRouter } from 'react-router-dom'
 import './index.scss'
 import App from './App.jsx'
 import { BookingModalProvider } from './Context/BookingModalContext'
+import { DripDetailModalProvider } from './Context/DripDetailModalContext'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <BookingModalProvider>
-        <App />
+        <DripDetailModalProvider>
+          <App />
+        </DripDetailModalProvider>
       </BookingModalProvider>
     </BrowserRouter>
   </StrictMode>,
